@@ -722,7 +722,19 @@ static rt_err_t ins5t8025_dev_control(rt_device_t dev,
     }
 }
 
+#ifdef RT_USING_DEVICE_OPS
+// 先定义全局的设备操作结构体（适配旧版本）
+static const struct rt_device_ops ops =
+{
+    RT_NULL,               // init 函数
+    ins5t8025_dev_open,    // open 函数
+    ins5t8025_dev_close,   // close 函数
+    ins5t8025_dev_read,    // read 函数
+    ins5t8025_dev_write,   // write 函数
+    ins5t8025_dev_control  // control 函数
+};
 
+#endif
 
 
 static int ins5t8025_dev_register(void) {
@@ -733,13 +745,19 @@ static int ins5t8025_dev_register(void) {
     RT_ASSERT(d->lock != RT_NULL);
 
     d->parent.type    = RT_Device_Class_RTC;
+    
+#ifdef RT_DEVICE_USING_OPS  // 旧版本（有rt_device_ops的情况）
+    d->parent.ops = &ops; 
+#else                       // 新版本（无ops，直接赋值函数）
+   
     d->parent.init    = RT_NULL;
     d->parent.open    = ins5t8025_dev_open;
     d->parent.close   = ins5t8025_dev_close;
     d->parent.read    = ins5t8025_dev_read;
     d->parent.write   = ins5t8025_dev_write;
     d->parent.control = ins5t8025_dev_control;
-
+#endif
+    
     return rt_device_register(&d->parent, "INS5T8025", RT_DEVICE_FLAG_RDWR);
 }
 INIT_ENV_EXPORT(ins5t8025_dev_register);
