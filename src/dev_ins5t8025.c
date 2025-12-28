@@ -8,7 +8,10 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <time.h>  
-#include <drivers/rtc.h>
+
+#define DEVICE_CTRL_RTC_GET_TIME 1
+#define DEVICE_CTRL_RTC_SET_TIME 2
+
 /* ====================================================================== */
 /*  INS5T8025 register map                                                */
 /* ====================================================================== */
@@ -708,10 +711,10 @@ static rt_err_t ins5t8025_dev_control(rt_device_t dev,
                                       int cmd,
                                       void *args) {
     switch (cmd) {
-    case RT_DEVICE_CTRL_RTC_GET_TIME:
+    case DEVICE_CTRL_RTC_GET_TIME:
         return _ins5t8025_rtc_get_time((struct tm *)args);
 
-    case RT_DEVICE_CTRL_RTC_SET_TIME:
+    case DEVICE_CTRL_RTC_SET_TIME:
         return _ins5t8025_rtc_set_time((struct tm *)args);
 
     default:
@@ -766,7 +769,7 @@ static void rtc_user_demo_entry(void *param) {
     /* 3. 连续读 5 次，看初始值 */
     rt_kprintf("[RTC_TEST] -------- read 5 times --------\n");
     for (i = 0; i < 5; i++) {
-        ret = rt_device_control(rtc, RT_DEVICE_CTRL_RTC_GET_TIME, &tm);
+        ret = rt_device_control(rtc, DEVICE_CTRL_RTC_GET_TIME, &tm);
         if (ret == RT_EOK)
             rt_kprintf("[RTC_TEST] read %d: %s", i, asctime(&tm));
         else
@@ -783,13 +786,13 @@ static void rtc_user_demo_entry(void *param) {
     tm.tm_sec  = 45;
     tm.tm_wday = 3;          /* 2025-06-25 确实是星期三 */
     rt_kprintf("[RTC_TEST] -------- write target: %s", asctime(&tm));
-    ret = rt_device_control(rtc, RT_DEVICE_CTRL_RTC_SET_TIME, &tm);
+    ret = rt_device_control(rtc, DEVICE_CTRL_RTC_SET_TIME, &tm);
     rt_kprintf("[RTC_TEST] write ret = %d\n", ret);
 
     /* 5. 再读 3 次，确认写入成功 */
     rt_kprintf("[RTC_TEST] -------- read 3 times after write --------\n");
     for (i = 0; i < 3; i++) {
-        ret = rt_device_control(rtc, RT_DEVICE_CTRL_RTC_GET_TIME, &tm);
+        ret = rt_device_control(rtc, DEVICE_CTRL_RTC_GET_TIME, &tm);
         if (ret == RT_EOK)
             rt_kprintf("[RTC_TEST] read %d: %s", i, asctime(&tm));
         else
