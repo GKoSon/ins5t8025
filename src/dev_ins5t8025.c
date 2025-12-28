@@ -15,60 +15,60 @@
 /* ====================================================================== */
 /*  INS5T8025 register map                                                */
 /* ====================================================================== */
-#define INS5T8025_ADDR                0x32    /* I2C ´Ó»úµØÖ·£¨7Î»£¬Ğ´µØÖ·£¬¶ÁµØÖ·Îª0x33£© */
-/* INS5T8025 ÊµÊ±Ê±ÖÓºËĞÄ¼Ä´æÆ÷¶¨Òå */
-#define INS5T8025_REG_SEC             0x00    /* Ãë¼Ä´æÆ÷ */
-#define INS5T8025_REG_MIN             0x01    /* ·Ö¼Ä´æÆ÷ */
-#define INS5T8025_REG_HOUR            0x02    /* Ê±¼Ä´æÆ÷ */
-#define INS5T8025_REG_WEEK            0x03    /* ĞÇÆÚ¼Ä´æÆ÷ */
-#define INS5T8025_REG_DAY             0x04    /* ÈÕ¼Ä´æÆ÷ */
-#define INS5T8025_REG_MONTH           0x05    /* ÔÂ¼Ä´æÆ÷ */
-#define INS5T8025_REG_YEAR            0x06    /* Äê¼Ä´æÆ÷ */
-#define INS5T8025_REG_CTL1            0x0E    /* ¿ØÖÆ¼Ä´æÆ÷1 */
-#define INS5T8025_REG_CTL2            0x0F    /* ¿ØÖÆ¼Ä´æÆ÷2 */
-/* INS5T8025 ÄÖÖÓÏà¹Ø¼Ä´æÆ÷¶¨Òå£¨ÊÖ²áµÚ11Ò³£© */
-#define INS5T8025_REG_ALARM_MIN       0x08    /* ·ÖÄÖÖÓ¼Ä´æÆ÷ */
-#define INS5T8025_REG_ALARM_HOUR      0x09    /* Ê±ÄÖÖÓ¼Ä´æÆ÷ */
-#define INS5T8025_REG_ALARM_DAY_WEEK  0x0A    /* ÈÕ/ĞÇÆÚÄÖÖÓ¼Ä´æÆ÷ */
-/* INS5T8025 ¿ØÖÆ/×´Ì¬Àà¼Ä´æÆ÷¶¨Òå */
-#define INS5T8025_REG_EXT             0x0D    /* À©Õ¹¼Ä´æÆ÷ */
-#define INS5T8025_REG_FLAG            0x0E    /* ±êÖ¾¼Ä´æÆ÷ */
-#define INS5T8025_REG_CTL             0x0F    /* ¿ØÖÆ¼Ä´æÆ÷ */
+#define INS5T8025_ADDR                0x32    /* I2C ä»æœºåœ°å€ï¼ˆ7ä½ï¼Œå†™åœ°å€ï¼Œè¯»åœ°å€ä¸º0x33ï¼‰ */
+/* INS5T8025 å®æ—¶æ—¶é’Ÿæ ¸å¿ƒå¯„å­˜å™¨å®šä¹‰ */
+#define INS5T8025_REG_SEC             0x00    /* ç§’å¯„å­˜å™¨ */
+#define INS5T8025_REG_MIN             0x01    /* åˆ†å¯„å­˜å™¨ */
+#define INS5T8025_REG_HOUR            0x02    /* æ—¶å¯„å­˜å™¨ */
+#define INS5T8025_REG_WEEK            0x03    /* æ˜ŸæœŸå¯„å­˜å™¨ */
+#define INS5T8025_REG_DAY             0x04    /* æ—¥å¯„å­˜å™¨ */
+#define INS5T8025_REG_MONTH           0x05    /* æœˆå¯„å­˜å™¨ */
+#define INS5T8025_REG_YEAR            0x06    /* å¹´å¯„å­˜å™¨ */
+#define INS5T8025_REG_CTL1            0x0E    /* æ§åˆ¶å¯„å­˜å™¨1 */
+#define INS5T8025_REG_CTL2            0x0F    /* æ§åˆ¶å¯„å­˜å™¨2 */
+/* INS5T8025 é—¹é’Ÿç›¸å…³å¯„å­˜å™¨å®šä¹‰ï¼ˆæ‰‹å†Œç¬¬11é¡µï¼‰ */
+#define INS5T8025_REG_ALARM_MIN       0x08    /* åˆ†é—¹é’Ÿå¯„å­˜å™¨ */
+#define INS5T8025_REG_ALARM_HOUR      0x09    /* æ—¶é—¹é’Ÿå¯„å­˜å™¨ */
+#define INS5T8025_REG_ALARM_DAY_WEEK  0x0A    /* æ—¥/æ˜ŸæœŸé—¹é’Ÿå¯„å­˜å™¨ */
+/* INS5T8025 æ§åˆ¶/çŠ¶æ€ç±»å¯„å­˜å™¨å®šä¹‰ */
+#define INS5T8025_REG_EXT             0x0D    /* æ‰©å±•å¯„å­˜å™¨ */
+#define INS5T8025_REG_FLAG            0x0E    /* æ ‡å¿—å¯„å­˜å™¨ */
+#define INS5T8025_REG_CTL             0x0F    /* æ§åˆ¶å¯„å­˜å™¨ */
 
-/* INS5T8025 À©Õ¹¼Ä´æÆ÷Î»¶¨Òå£¨ÊÖ²áµÚ15Ò³£© */
-#define EXT_WADA_BIT               (1 << 6) /* WADAÎ»£º0=ĞÇÆÚÄÖÖÓ£¬1=ÈÕÄÖÖÓ */  
-#define EXT_USEL_BIT               (1 << 5) /* ¸üĞÂÖĞ¶ÏÑ¡ÔñÎ» */  
-#define EXT_TE_BIT                 (1 << 4) /* ¶¨Ê±Æ÷Ê¹ÄÜÎ» */  
+/* INS5T8025 æ‰©å±•å¯„å­˜å™¨ä½å®šä¹‰ï¼ˆæ‰‹å†Œç¬¬15é¡µï¼‰ */
+#define EXT_WADA_BIT               (1 << 6) /* WADAä½ï¼š0=æ˜ŸæœŸé—¹é’Ÿï¼Œ1=æ—¥é—¹é’Ÿ */  
+#define EXT_USEL_BIT               (1 << 5) /* æ›´æ–°ä¸­æ–­é€‰æ‹©ä½ */  
+#define EXT_TE_BIT                 (1 << 4) /* å®šæ—¶å™¨ä½¿èƒ½ä½ */  
 
-/* INS5T8025 ±êÖ¾¼Ä´æÆ÷Î»¶¨Òå£¨ÊÖ²áµÚ15Ò³£© */
-#define FLAG_VDET_BIT              (1 << 0) /* µçÑ¹¼ì²â±êÖ¾Î» */  
-#define FLAG_VLF_BIT               (1 << 1) /* µçÑ¹µÍ±êÖ¾Î» */  
-#define FLAG_AF_BIT                (1 << 3) /* ÄÖÖÓ±êÖ¾Î» */  
-#define FLAG_TF_BIT                (1 << 4) /* ¶¨Ê±Æ÷±êÖ¾Î» */  
-#define FLAG_UF_BIT                (1 << 5) /* ¸üĞÂ±êÖ¾Î» */  
+/* INS5T8025 æ ‡å¿—å¯„å­˜å™¨ä½å®šä¹‰ï¼ˆæ‰‹å†Œç¬¬15é¡µï¼‰ */
+#define FLAG_VDET_BIT              (1 << 0) /* ç”µå‹æ£€æµ‹æ ‡å¿—ä½ */  
+#define FLAG_VLF_BIT               (1 << 1) /* ç”µå‹ä½æ ‡å¿—ä½ */  
+#define FLAG_AF_BIT                (1 << 3) /* é—¹é’Ÿæ ‡å¿—ä½ */  
+#define FLAG_TF_BIT                (1 << 4) /* å®šæ—¶å™¨æ ‡å¿—ä½ */  
+#define FLAG_UF_BIT                (1 << 5) /* æ›´æ–°æ ‡å¿—ä½ */  
 
-/* INS5T8025 ¿ØÖÆ¼Ä´æÆ÷Î»¶¨Òå£¨ÊÖ²áµÚ16Ò³£© */
-#define CTL_RESET_BIT              (1 << 0) /* ¸´Î»Î» */  
-#define CTL_AIE_BIT                (1 << 3) /* ÄÖÖÓÖĞ¶ÏÊ¹ÄÜÎ» */  
-#define CTL_TIE_BIT                (1 << 4) /* ¶¨Ê±Æ÷ÖĞ¶ÏÊ¹ÄÜÎ» */  
-#define CTL_UIE_BIT                (1 << 5) /* ¸üĞÂÖĞ¶ÏÊ¹ÄÜÎ» */  
+/* INS5T8025 æ§åˆ¶å¯„å­˜å™¨ä½å®šä¹‰ï¼ˆæ‰‹å†Œç¬¬16é¡µï¼‰ */
+#define CTL_RESET_BIT              (1 << 0) /* å¤ä½ä½ */  
+#define CTL_AIE_BIT                (1 << 3) /* é—¹é’Ÿä¸­æ–­ä½¿èƒ½ä½ */  
+#define CTL_TIE_BIT                (1 << 4) /* å®šæ—¶å™¨ä¸­æ–­ä½¿èƒ½ä½ */  
+#define CTL_UIE_BIT                (1 << 5) /* æ›´æ–°ä¸­æ–­ä½¿èƒ½ä½ */  
 
-/* INS5T8025 ÄÖÖÓ×¨ÓÃÎ»¶¨Òå */
-#define ALARM_AE_BIT               (1 << 7) /* ÄÖÖÓÊ¹ÄÜÎ»£º0=Ê¹ÄÜ£¬1=½ûÓÃ */
+/* INS5T8025 é—¹é’Ÿä¸“ç”¨ä½å®šä¹‰ */
+#define ALARM_AE_BIT               (1 << 7) /* é—¹é’Ÿä½¿èƒ½ä½ï¼š0=ä½¿èƒ½ï¼Œ1=ç¦ç”¨ */
 
 
 #define INS5T8025_INT_PIN   rt_pin_get(INS5T8025_ALARM_INT_PIN)
 
 
-/* Èí¼şI2CÉè±¸¾ä±ú */
+/* è½¯ä»¶I2Cè®¾å¤‡å¥æŸ„ */
 static struct rt_i2c_bus_device *ins5t8025_i2c_bus = RT_NULL;
 
 
 
-/**********************************ĞÇÆÚµ¥¶ÀÉè¼Æ**********************************/ 
-// ÕıÏò²éÕÒ:±ÈÈçĞÇÆÚ0ÕæÊµÊÇĞÇÆÚÌì¶ÔÓ¦weekMap[0]¶ÔÓ¦ÖµÊÇ0X01
+/**********************************æ˜ŸæœŸå•ç‹¬è®¾è®¡**********************************/ 
+// æ­£å‘æŸ¥æ‰¾:æ¯”å¦‚æ˜ŸæœŸ0çœŸå®æ˜¯æ˜ŸæœŸå¤©å¯¹åº”weekMap[0]å¯¹åº”å€¼æ˜¯0X01
 static const uint8_t weekMap[7] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40};
-// ·´Ïò²éÕÒ:±ÈÈçÖµÊÇ0x40 Ö´ĞĞº¯ÊıÕÒµ½[6]¶ÔÓ¦ĞÇÆÚÁù
+// åå‘æŸ¥æ‰¾:æ¯”å¦‚å€¼æ˜¯0x40 æ‰§è¡Œå‡½æ•°æ‰¾åˆ°[6]å¯¹åº”æ˜ŸæœŸå…­
 static int reverse_lookup(uint8_t value) {
     for(int i = 0; i < 7; i++) {
         if(weekMap[i] == value) {
@@ -78,7 +78,7 @@ static int reverse_lookup(uint8_t value) {
     return -1;
 }
 
-//»ùÄ·À­¶ûÉ­¹«Ê½£º¸ù¾İÄêÔÂÈÕ¼ÆËãĞÇÆÚ¼¸ 0=Sunday ... 6=Saturday
+//åŸºå§†æ‹‰å°”æ£®å…¬å¼ï¼šæ ¹æ®å¹´æœˆæ—¥è®¡ç®—æ˜ŸæœŸå‡  0=Sunday ... 6=Saturday
 int calculate_weekday(int year, int month, int day) {
     if(month < 3)    {
         month += 12;
@@ -88,18 +88,18 @@ int calculate_weekday(int year, int month, int day) {
     return week;  
 }
 
-/**********************************¸¨Öúº¯Êı**********************************/
-/* BCDÂë×ªÊ®½øÖÆ */
+/**********************************è¾…åŠ©å‡½æ•°**********************************/
+/* BCDç è½¬åè¿›åˆ¶ */
 static uint8_t bcd2dec(uint8_t bcd) {
     return (bcd >> 4) * 10 + (bcd & 0x0F);
 }
 
-/* Ê®½øÖÆ×ªBCDÂë */
+/* åè¿›åˆ¶è½¬BCDç  */
 static uint8_t dec2bcd(uint8_t dec) {
     return ((dec / 10) << 4) | (dec % 10);
 }
 
-/**********************************²Ù×÷IIC**********************************/
+/**********************************æ“ä½œIIC**********************************/
 
 static rt_err_t ins5t8025_write_reg(uint8_t reg, uint8_t data) {
     struct rt_i2c_msg msgs[1];
@@ -122,13 +122,13 @@ static rt_err_t ins5t8025_read_reg(uint8_t reg, uint8_t *data) {
     struct rt_i2c_msg msgs[2];
     uint8_t reg_addr = reg;
 
-    /* µÚÒ»²½£º·¢ËÍÒª¶ÁÈ¡µÄ¼Ä´æÆ÷µÄµØÖ· */
+    /* ç¬¬ä¸€æ­¥ï¼šå‘é€è¦è¯»å–çš„å¯„å­˜å™¨çš„åœ°å€ */
     msgs[0].addr  = INS5T8025_ADDR;
     msgs[0].flags = RT_I2C_WR;
     msgs[0].buf   = &reg_addr;
     msgs[0].len   = 1;
 
-    /* µÚ¶ş²½£º¶ÁÈ¡Êı¾İ */
+    /* ç¬¬äºŒæ­¥ï¼šè¯»å–æ•°æ® */
     msgs[1].addr  = INS5T8025_ADDR;
     msgs[1].flags = RT_I2C_RD;
     msgs[1].buf   = data;
@@ -141,10 +141,10 @@ static rt_err_t ins5t8025_read_reg(uint8_t reg, uint8_t *data) {
     return RT_EOK;
 }
 
-/**********************************APIº¯Êı**********************************/
+/**********************************APIå‡½æ•°**********************************/
 static rt_err_t ins5t8025_init_int(void);
 
-/* ³õÊ¼»¯INS5T8025 */
+/* åˆå§‹åŒ–INS5T8025 */
 rt_err_t ins5t8025_init(const char *i2c_bus_name) {
     uint8_t ctl1, ctl2;
 
@@ -159,9 +159,9 @@ rt_err_t ins5t8025_init(const char *i2c_bus_name) {
     if(ins5t8025_read_reg(INS5T8025_REG_CTL2, &ctl2) != RT_EOK)
         return RT_ERROR;
 
-    /* ³õÊ¼»¯¿ØÖÆ¼Ä´æÆ÷£º¹Ø±ÕÖĞ¶Ï£¬ÆôÓÃÕñµ´Æ÷£¬Ä¬ÈÏ24Ğ¡Ê±ÖÆ */
-    ctl1 = 0x00;  /* ½ûÓÃÖĞ¶Ï£¬ÆÕÍ¨Ä£Ê½ */
-    ctl2 = 0x00;  /* ½ûÓÃ¶¨Ê±Æ÷£¬Ä¬ÈÏÆµÂÊÊä³ö */
+    /* åˆå§‹åŒ–æ§åˆ¶å¯„å­˜å™¨ï¼šå…³é—­ä¸­æ–­ï¼Œå¯ç”¨æŒ¯è¡å™¨ï¼Œé»˜è®¤24å°æ—¶åˆ¶ */
+    ctl1 = 0x00;  /* ç¦ç”¨ä¸­æ–­ï¼Œæ™®é€šæ¨¡å¼ */
+    ctl2 = 0x00;  /* ç¦ç”¨å®šæ—¶å™¨ï¼Œé»˜è®¤é¢‘ç‡è¾“å‡º */
     if(ins5t8025_write_reg(INS5T8025_REG_CTL1, ctl1) != RT_EOK)
         return RT_ERROR;
     if(ins5t8025_write_reg(INS5T8025_REG_CTL2, ctl2) != RT_EOK)
@@ -169,7 +169,7 @@ rt_err_t ins5t8025_init(const char *i2c_bus_name) {
 
     
     
-     /* ³õÊ¼»¯ÄÖÖÓÖĞ¶Ï¹¦ÄÜ:ÄÖÖÓÔ­Àí Ğ´¼Ä´æÆ÷ÅäÖÃÄÖÖÓÊ±¼ä-Ê±¼äµ½PIN½ÅÏÂ½µÑØÖĞ¶Ï-Ó¦ÓÃ²éµ½ÖĞ¶ÏĞ´¼Ä´æÆ÷Çå³õ*/
+     /* åˆå§‹åŒ–é—¹é’Ÿä¸­æ–­åŠŸèƒ½:é—¹é’ŸåŸç† å†™å¯„å­˜å™¨é…ç½®é—¹é’Ÿæ—¶é—´-æ—¶é—´åˆ°PINè„šä¸‹é™æ²¿ä¸­æ–­-åº”ç”¨æŸ¥åˆ°ä¸­æ–­å†™å¯„å­˜å™¨æ¸…åˆ*/
     if (ins5t8025_init_int() != RT_EOK) {
         rt_kprintf("Init interrupt failed!\n");
         return RT_ERROR;
@@ -183,31 +183,31 @@ rt_err_t ins5t8025_init(const char *i2c_bus_name) {
 
 
 
-/* ÉèÖÃRTCÊ±¼ä */
+/* è®¾ç½®RTCæ—¶é—´ */
 rt_err_t ins5t8025_set_time(struct tm *time) {
     if(time == RT_NULL)
         return RT_ERROR;
 
 
-    // Ğ£Ñéstruct tmµÄ²ÎÊı£¨¸ù¾İstruct tmµÄÌØĞÔ£©
+    // æ ¡éªŒstruct tmçš„å‚æ•°ï¼ˆæ ¹æ®struct tmçš„ç‰¹æ€§ï¼‰
     if(time->tm_sec > 59 || time->tm_min > 59 || time->tm_hour > 23 ||
             time->tm_mday < 1 || time->tm_mday > 31 ||
-            time->tm_mon < 0 || time->tm_mon > 11 ||  // struct tmµÄÔÂ·İÊÇ0-11
-            time->tm_year < 100 || time->tm_year > 200) { // 100¶ÔÓ¦2000Äê£¨1900+100£©
+            time->tm_mon < 0 || time->tm_mon > 11 ||  // struct tmçš„æœˆä»½æ˜¯0-11
+            time->tm_year < 100 || time->tm_year > 200) { // 100å¯¹åº”2000å¹´ï¼ˆ1900+100ï¼‰
         rt_kprintf("Invalid time parameters!\n");
         return RT_ERROR;
     }
 
 
     rt_kprintf("ins5t8025_set_time week:%d  %d\n", time->tm_wday, dec2bcd(time->tm_wday));
-    /* Ğ´ÈëÊ±¼ä¼Ä´æÆ÷£¨Ãë¡¢·Ö¡¢Ê±¡¢ĞÇÆÚ¡¢ÈÕ¡¢ÔÂ¡¢Äê£© */
+    /* å†™å…¥æ—¶é—´å¯„å­˜å™¨ï¼ˆç§’ã€åˆ†ã€æ—¶ã€æ˜ŸæœŸã€æ—¥ã€æœˆã€å¹´ï¼‰ */
     ins5t8025_write_reg(INS5T8025_REG_SEC,  dec2bcd(time->tm_sec));
     ins5t8025_write_reg(INS5T8025_REG_MIN,  dec2bcd(time->tm_min));
-    ins5t8025_write_reg(INS5T8025_REG_HOUR, dec2bcd(time->tm_hour));  /* 24Ğ¡Ê±ÖÆ */
+    ins5t8025_write_reg(INS5T8025_REG_HOUR, dec2bcd(time->tm_hour));  /* 24å°æ—¶åˆ¶ */
     ins5t8025_write_reg(INS5T8025_REG_WEEK, weekMap[time->tm_wday]);
     ins5t8025_write_reg(INS5T8025_REG_DAY,  dec2bcd(time->tm_mday));
     ins5t8025_write_reg(INS5T8025_REG_MONTH, dec2bcd(time->tm_mon));
-    ins5t8025_write_reg(INS5T8025_REG_YEAR, dec2bcd(time->tm_year));  /* Äê·İÈ¡ºóÁ½Î»£¨00-99£© */
+    ins5t8025_write_reg(INS5T8025_REG_YEAR, dec2bcd(time->tm_year));  /* å¹´ä»½å–åä¸¤ä½ï¼ˆ00-99ï¼‰ */
 
     return RT_EOK;
 }
@@ -215,14 +215,14 @@ rt_err_t ins5t8025_set_time(struct tm *time) {
 
 
 
-/* »ñÈ¡RTCÊ±¼ä */
+/* è·å–RTCæ—¶é—´ */
 rt_err_t ins5t8025_get_time(struct tm *time) {
     uint8_t sec, min, hour, week, day, month, year;
 
     if(time == RT_NULL)
         return RT_ERROR;
 
-    /* ¶ÁÈ¡Ê±¼ä¼Ä´æÆ÷ */
+    /* è¯»å–æ—¶é—´å¯„å­˜å™¨ */
     ins5t8025_read_reg(INS5T8025_REG_SEC,   &sec);
     ins5t8025_read_reg(INS5T8025_REG_MIN,   &min);
     ins5t8025_read_reg(INS5T8025_REG_HOUR,  &hour);
@@ -231,14 +231,14 @@ rt_err_t ins5t8025_get_time(struct tm *time) {
     ins5t8025_read_reg(INS5T8025_REG_MONTH, &month);
     ins5t8025_read_reg(INS5T8025_REG_YEAR,  &year);
 
-    /* BCD×ªÊ®½øÖÆ²¢¸³Öµ */
-    time->tm_sec  = bcd2dec(sec & 0x7F);  /* ÆÁ±ÎÃë¼Ä´æÆ÷µÄOSFÎ»£¨Õñµ´Æ÷Í£Ö¹±êÖ¾£© */
+    /* BCDè½¬åè¿›åˆ¶å¹¶èµ‹å€¼ */
+    time->tm_sec  = bcd2dec(sec & 0x7F);  /* å±è”½ç§’å¯„å­˜å™¨çš„OSFä½ï¼ˆæŒ¯è¡å™¨åœæ­¢æ ‡å¿—ï¼‰ */
     time->tm_min  = bcd2dec(min & 0x7F);
-    time->tm_hour = bcd2dec(hour & 0x3F); /* 24Ğ¡Ê±ÖÆ£¬ÆÁ±Î¸ßÎ» */
+    time->tm_hour = bcd2dec(hour & 0x3F); /* 24å°æ—¶åˆ¶ï¼Œå±è”½é«˜ä½ */
     time->tm_wday = reverse_lookup(week) ;
     time->tm_mday = bcd2dec(day & 0x3F);
     time->tm_mon  = bcd2dec(month & 0x1F);
-    time->tm_year = bcd2dec(year);  /* Äê·İºóÁ½Î»£¨00-99£© */
+    time->tm_year = bcd2dec(year);  /* å¹´ä»½åä¸¤ä½ï¼ˆ00-99ï¼‰ */
 
     rt_kprintf("ins5t8025_get_time week:%d %d\n", week, time->tm_wday);
     return RT_EOK;
@@ -246,39 +246,39 @@ rt_err_t ins5t8025_get_time(struct tm *time) {
 
 
 
-/* ÉèÖÃÄÖÖÓÊ±¼ä */
+/* è®¾ç½®é—¹é’Ÿæ—¶é—´ */
 rt_err_t ins5t8025_set_alarm(uint8_t hour, uint8_t min, uint8_t day_or_week, rt_bool_t is_day_alarm) {
     uint8_t ext_reg;
 
-    /* ¶ÁÈ¡À©Õ¹¼Ä´æÆ÷ */
+    /* è¯»å–æ‰©å±•å¯„å­˜å™¨ */
     if (ins5t8025_read_reg(INS5T8025_REG_EXT, &ext_reg) != RT_EOK)
         return RT_ERROR;
 
-    /* ÉèÖÃWADAÎ»Ñ¡ÔñÈÕÄÖÖÓ»òĞÇÆÚÄÖÖÓ */
+    /* è®¾ç½®WADAä½é€‰æ‹©æ—¥é—¹é’Ÿæˆ–æ˜ŸæœŸé—¹é’Ÿ */
     if (is_day_alarm) {
-        ext_reg |= EXT_WADA_BIT;  // ÈÕÄÖÖÓÄ£Ê½
+        ext_reg |= EXT_WADA_BIT;  // æ—¥é—¹é’Ÿæ¨¡å¼
     } else {
-        ext_reg &= ~EXT_WADA_BIT; // ĞÇÆÚÄÖÖÓÄ£Ê½
+        ext_reg &= ~EXT_WADA_BIT; // æ˜ŸæœŸé—¹é’Ÿæ¨¡å¼
     }
     
     if (ins5t8025_write_reg(INS5T8025_REG_EXT, ext_reg) != RT_EOK)
         return RT_ERROR;
 
-    /* Ğ´Èë·ÖÄÖÖÓ¼Ä´æÆ÷£¨AE=0Ê¹ÄÜÄÖÖÓ£© */
+    /* å†™å…¥åˆ†é—¹é’Ÿå¯„å­˜å™¨ï¼ˆAE=0ä½¿èƒ½é—¹é’Ÿï¼‰ */
     if (ins5t8025_write_reg(INS5T8025_REG_ALARM_MIN, dec2bcd(min) & 0x7F) != RT_EOK)
         return RT_ERROR;
 
-    /* Ğ´ÈëÊ±ÄÖÖÓ¼Ä´æÆ÷£¨AE=0Ê¹ÄÜÄÖÖÓ£© */
+    /* å†™å…¥æ—¶é—¹é’Ÿå¯„å­˜å™¨ï¼ˆAE=0ä½¿èƒ½é—¹é’Ÿï¼‰ */
     if (ins5t8025_write_reg(INS5T8025_REG_ALARM_HOUR, dec2bcd(hour) & 0x7F) != RT_EOK)
         return RT_ERROR;
 
-    /* Ğ´ÈëÈÕ/ĞÇÆÚÄÖÖÓ¼Ä´æÆ÷ */
+    /* å†™å…¥æ—¥/æ˜ŸæœŸé—¹é’Ÿå¯„å­˜å™¨ */
     if (is_day_alarm) {
-        /* ÈÕÄÖÖÓ£ºĞ´ÈëÈÕÖµ£¨1-31£©£¬BCD¸ñÊ½£¬AE=0 */
+        /* æ—¥é—¹é’Ÿï¼šå†™å…¥æ—¥å€¼ï¼ˆ1-31ï¼‰ï¼ŒBCDæ ¼å¼ï¼ŒAE=0 */
         if (ins5t8025_write_reg(INS5T8025_REG_ALARM_DAY_WEEK, dec2bcd(day_or_week) & 0x7F) != RT_EOK)
             return RT_ERROR;
     } else {
-        /* ĞÇÆÚÄÖÖÓ£ºĞ´ÈëĞÇÆÚÖµ£¨0-6£©£¬Ê¹ÓÃweekMapÓ³Éä£¬AE=0 */
+        /* æ˜ŸæœŸé—¹é’Ÿï¼šå†™å…¥æ˜ŸæœŸå€¼ï¼ˆ0-6ï¼‰ï¼Œä½¿ç”¨weekMapæ˜ å°„ï¼ŒAE=0 */
         if (day_or_week < 7) {
             if (ins5t8025_write_reg(INS5T8025_REG_ALARM_DAY_WEEK, weekMap[day_or_week] & 0x7F) != RT_EOK)
                 return RT_ERROR;
@@ -292,7 +292,7 @@ rt_err_t ins5t8025_set_alarm(uint8_t hour, uint8_t min, uint8_t day_or_week, rt_
     return RT_EOK;
 }
 
-/* Ê¹ÄÜÄÖÖÓÖĞ¶Ï */
+/* ä½¿èƒ½é—¹é’Ÿä¸­æ–­ */
 rt_err_t ins5t8025_enable_alarm_int(rt_bool_t enable) {
     uint8_t ctl_reg;
 
@@ -300,28 +300,28 @@ rt_err_t ins5t8025_enable_alarm_int(rt_bool_t enable) {
         return RT_ERROR;
 
     if (enable) {
-        ctl_reg |= CTL_AIE_BIT;  // Ê¹ÄÜÄÖÖÓÖĞ¶Ï
+        ctl_reg |= CTL_AIE_BIT;  // ä½¿èƒ½é—¹é’Ÿä¸­æ–­
     } else {
-        ctl_reg &= ~CTL_AIE_BIT; // ½ûÓÃÄÖÖÓÖĞ¶Ï
+        ctl_reg &= ~CTL_AIE_BIT; // ç¦ç”¨é—¹é’Ÿä¸­æ–­
     }
 
     return ins5t8025_write_reg(INS5T8025_REG_CTL, ctl_reg);
 }
 
-/* Çå³ıÄÖÖÓ±êÖ¾ */
+/* æ¸…é™¤é—¹é’Ÿæ ‡å¿— */
 rt_err_t ins5t8025_clear_alarm_flag(void) {
     uint8_t flag_reg;
 
     if (ins5t8025_read_reg(INS5T8025_REG_FLAG, &flag_reg) != RT_EOK)
         return RT_ERROR;
 
-    /* Ğ´0Çå³ıAFÎ»£¨ÊÖ²áµÚ15Ò³£© */
+    /* å†™0æ¸…é™¤AFä½ï¼ˆæ‰‹å†Œç¬¬15é¡µï¼‰ */
     flag_reg &= ~FLAG_AF_BIT;
 
     return ins5t8025_write_reg(INS5T8025_REG_FLAG, flag_reg);
 }
 
-/* ¼ì²éÄÖÖÓ±êÖ¾×´Ì¬ */
+/* æ£€æŸ¥é—¹é’Ÿæ ‡å¿—çŠ¶æ€ */
 rt_bool_t ins5t8025_check_alarm_flag(void) {
     uint8_t flag_reg;
 
@@ -331,36 +331,36 @@ rt_bool_t ins5t8025_check_alarm_flag(void) {
     return (flag_reg & FLAG_AF_BIT) ? RT_TRUE : RT_FALSE;
 }
 
-/* »ñÈ¡À©Õ¹¼Ä´æÆ÷Öµ£¨ÓÃÓÚµ÷ÊÔ£© */
+/* è·å–æ‰©å±•å¯„å­˜å™¨å€¼ï¼ˆç”¨äºè°ƒè¯•ï¼‰ */
 rt_err_t ins5t8025_get_ext_reg(uint8_t *value) {
     return ins5t8025_read_reg(INS5T8025_REG_EXT, value);
 }
 
-/**********************************ÄÖÖÓ¹¦ÄÜ**********************************/
-/* ĞÂÔöÈ«¾Ö±äÁ¿ */
-static rt_sem_t alarm_sem = RT_NULL;  /* ÄÖÖÓĞÅºÅÁ¿ */
+/**********************************é—¹é’ŸåŠŸèƒ½**********************************/
+/* æ–°å¢å…¨å±€å˜é‡ */
+static rt_sem_t alarm_sem = RT_NULL;  /* é—¹é’Ÿä¿¡å·é‡ */
 
-/* ÖĞ¶Ï´¦Àíº¯Êı */
+/* ä¸­æ–­å¤„ç†å‡½æ•° */
 static void ins5t8025_int_handler(void *args) {
     rt_sem_release(alarm_sem);
 }
 void rtc_alarm_task_entry(void *param) {
     while (1) {
-        /* ÓÀ¾ÃµÈ´ıÄÖÖÓÊÂ¼ş */
+        /* æ°¸ä¹…ç­‰å¾…é—¹é’Ÿäº‹ä»¶ */
         if (rt_sem_take(alarm_sem, RT_WAITING_FOREVER) == RT_EOK) {
-            /*********** ÒÔÏÂ´úÂë¶¼ÔÚÏß³ÌÉÏÏÂÎÄ£¬°²È«´òÓ¡¡¢»Øµ÷ ***********/
+            /*********** ä»¥ä¸‹ä»£ç éƒ½åœ¨çº¿ç¨‹ä¸Šä¸‹æ–‡ï¼Œå®‰å…¨æ‰“å°ã€å›è°ƒ ***********/
             rt_kprintf("Alarm triggered! thread handler!\n");
 
-             /* ¶ÁÈ¡±êÖ¾¼Ä´æÆ÷ */
+             /* è¯»å–æ ‡å¿—å¯„å­˜å™¨ */
              uint8_t flag_reg;
             if (ins5t8025_read_reg(INS5T8025_REG_FLAG, &flag_reg) == RT_EOK) {
-            /* ¼ì²éÄÖÖÓ±êÖ¾ */
+            /* æ£€æŸ¥é—¹é’Ÿæ ‡å¿— */
                 if (flag_reg & FLAG_AF_BIT) {
 /***************************************************************************/                
                     rt_kprintf("Alarm triggered! Flag register: 0x%02X\n", flag_reg);                
-                    /* Çå³ıÄÖÖÓ±êÖ¾ */
+                    /* æ¸…é™¤é—¹é’Ÿæ ‡å¿— */
                     ins5t8025_clear_alarm_flag();                
-                    /* TODO: ÕâÀï¿ÉÒÔ¼ÓÓÃ»§×Ô¶¨Òå»Øµ÷º¯Êı */
+                    /* TODO: è¿™é‡Œå¯ä»¥åŠ ç”¨æˆ·è‡ªå®šä¹‰å›è°ƒå‡½æ•° */
 /***************************************************************************/                     
                 }
             }
@@ -369,22 +369,22 @@ void rtc_alarm_task_entry(void *param) {
 }
 
 
-/* ³õÊ¼»¯ÖĞ¶Ï¹¦ÄÜ */
+/* åˆå§‹åŒ–ä¸­æ–­åŠŸèƒ½ */
 static rt_err_t ins5t8025_init_int(void) {
-    /* ´´½¨ÄÖÖÓĞÅºÅÁ¿ */
+    /* åˆ›å»ºé—¹é’Ÿä¿¡å·é‡ */
     alarm_sem = rt_sem_create("alarm_sem", 0, RT_IPC_FLAG_FIFO);
     if (alarm_sem == RT_NULL) {
         rt_kprintf("Create alarm_sem failed!\n");
         return RT_ERROR;
     }
     
-    /* ÅäÖÃÖĞ¶ÏÒı½Å£¨¼ÙÉèINTÒı½ÅÁ¬½Óµ½PA0£¬Çë¸ù¾İÊµ¼ÊÓ²¼şµ÷Õû£© */
+    /* é…ç½®ä¸­æ–­å¼•è„šï¼ˆå‡è®¾INTå¼•è„šè¿æ¥åˆ°PA0ï¼Œè¯·æ ¹æ®å®é™…ç¡¬ä»¶è°ƒæ•´ï¼‰ */
     rt_pin_mode(INS5T8025_INT_PIN, PIN_MODE_INPUT_PULLUP);
     rt_pin_attach_irq(INS5T8025_INT_PIN, PIN_IRQ_MODE_FALLING, ins5t8025_int_handler, RT_NULL);
     rt_pin_irq_enable(INS5T8025_INT_PIN, PIN_IRQ_ENABLE);
     
     
-    //´´½¨¶ÔÓ¦µÄÈÎÎñ µ±ĞÅºÅalarm_sem·¢²¼µÄÊ±ºò È¥Ö´ĞĞ¶Á¼Ä´æÆ÷µÈ¶¯×÷
+    //åˆ›å»ºå¯¹åº”çš„ä»»åŠ¡ å½“ä¿¡å·alarm_semå‘å¸ƒçš„æ—¶å€™ å»æ‰§è¡Œè¯»å¯„å­˜å™¨ç­‰åŠ¨ä½œ
     rt_thread_t tid = rt_thread_create("alarm_task",
                            rtc_alarm_task_entry,
                            RT_NULL,
@@ -394,7 +394,7 @@ static rt_err_t ins5t8025_init_int(void) {
     if (tid)
         rt_thread_startup(tid);
  
-    /* Ê¹ÄÜÄÖÖÓÖĞ¶Ï */
+    /* ä½¿èƒ½é—¹é’Ÿä¸­æ–­ */
     if (ins5t8025_enable_alarm_int(RT_TRUE) != RT_EOK) {
         rt_kprintf("Enable alarm interrupt failed!\n");
         return RT_ERROR;
@@ -405,9 +405,9 @@ static rt_err_t ins5t8025_init_int(void) {
 }
 
 
-/**********************************ShellÃüÁî**********************************/
+/**********************************Shellå‘½ä»¤**********************************/
 
-/* ShellÃüÁî£ºÉèÖÃÄÖÖÓ 
+/* Shellå‘½ä»¤ï¼šè®¾ç½®é—¹é’Ÿ 
 
 rtc_set_alarm_cmd 9 59   12 1
 rtc_set_alarm_cmd 10 0   5  0 
@@ -416,8 +416,8 @@ static void rtc_set_alarm_cmd(int argc, char **argv) {
     if (argc != 5) {  
         rt_kprintf("Usage: rtc_set_alarm_cmd <hour> <min> <value> <type>\n");  
         rt_kprintf("  type: 0=Weekday (0-6), 1=Day (1-31)\n");  
-        rt_kprintf("Example: rtc_set_alarm_cmd 8 30   1 0   # Ã¿ÖÜÒ»8:30   [×îºóTYPEÊÇ0±íÊ¾ÖÜ ÄÇÃ´Ç°Ãæ1  ±íÊ¾ÖÜÒ»]\n");  
-        rt_kprintf("         rtc_set_alarm_cmd 12 0   15 1  # Ã¿ÔÂ15ÈÕ12:00[×îºóTYPEÊÇ1±íÊ¾Ìì ÄÇÃ´Ç°Ãæ15 ±íÊ¾ÖÜÔÂ15ÈÕµÄÕâÒ»Ìì]\n");  
+        rt_kprintf("Example: rtc_set_alarm_cmd 8 30   1 0   # æ¯å‘¨ä¸€8:30   [æœ€åTYPEæ˜¯0è¡¨ç¤ºå‘¨ é‚£ä¹ˆå‰é¢1  è¡¨ç¤ºå‘¨ä¸€]\n");  
+        rt_kprintf("         rtc_set_alarm_cmd 12 0   15 1  # æ¯æœˆ15æ—¥12:00[æœ€åTYPEæ˜¯1è¡¨ç¤ºå¤© é‚£ä¹ˆå‰é¢15 è¡¨ç¤ºå‘¨æœˆ15æ—¥çš„è¿™ä¸€å¤©]\n");  
         return;  
     }  
     uint8_t hour = atoi(argv[1]);  
@@ -453,7 +453,7 @@ static void rtc_set_alarm_cmd(int argc, char **argv) {
 }  
 MSH_CMD_EXPORT(rtc_set_alarm_cmd, Set alarm: rtc_set_alarm hour-min-value type);  
 
-/* ShellÃüÁî£º¼ì²éÄÖÖÓ×´Ì¬ */
+/* Shellå‘½ä»¤ï¼šæ£€æŸ¥é—¹é’ŸçŠ¶æ€ */
 static void rtc_alarm_status_cmd(int argc, char **argv) {
     uint8_t ext_reg, flag_reg;
     
@@ -474,7 +474,7 @@ static void rtc_alarm_status_cmd(int argc, char **argv) {
 }
 MSH_CMD_EXPORT(rtc_alarm_status_cmd, Show alarm status);
 
-/* ShellÃüÁî£ºµÈ´ıÄÖÖÓ´¥·¢ */
+/* Shellå‘½ä»¤ï¼šç­‰å¾…é—¹é’Ÿè§¦å‘ */
 static void rtc_wait_alarm_cmd(int argc, char **argv) {
     rt_kprintf("Waiting for alarm trigger...\n");
     
@@ -488,13 +488,13 @@ MSH_CMD_EXPORT(rtc_wait_alarm_cmd, Wait for alarm trigger);
 
 
 
-/**********************************¶ÀÁ¢API***********************************/
+/**********************************ç‹¬ç«‹API***********************************/
 
-/* È«¾Ö±äÁ¿£º±ê¼ÇRTCÊÇ·ñÒÑ³õÊ¼»¯ */
+/* å…¨å±€å˜é‡ï¼šæ ‡è®°RTCæ˜¯å¦å·²åˆå§‹åŒ– */
 static rt_bool_t ins5t8025_inited = RT_FALSE;
 
 /*
- * shellÃüÁî£º³õÊ¼»¯RTC£¨²ÎÊıÎªI2C×ÜÏßÃû£¬Èç"i2c1"£©
+ * shellå‘½ä»¤ï¼šåˆå§‹åŒ–RTCï¼ˆå‚æ•°ä¸ºI2Cæ€»çº¿åï¼Œå¦‚"i2c1"ï¼‰
  */
 static void rtc_init_cmd(int argc, char **argv) {
     if(argc != 2) {
@@ -516,36 +516,36 @@ MSH_CMD_EXPORT(rtc_init_cmd, rtc_init_cmd);
 
 
 int param_check(uint16_t year,uint16_t month, uint16_t day,uint16_t hour, uint16_t min, uint16_t sec,uint16_t weekday){ 
-    if(year < 2000 || year > 2100) {         // ÏŞÖÆºÏÀíÄê·İ·¶Î§  
-        rt_kprintf("Äê·İ²»ºÏ·¨!ÇëÊäÈë2000-2100Ö®¼äµÄÄê·İ0X[%X]\n",year);  
+    if(year < 2000 || year > 2100) {         // é™åˆ¶åˆç†å¹´ä»½èŒƒå›´  
+        rt_kprintf("å¹´ä»½ä¸åˆæ³•!è¯·è¾“å…¥2000-2100ä¹‹é—´çš„å¹´ä»½0X[%X]\n",year);  
         return 1;  
     }  
-    if(month < 1 || month > 12) {            // ÔÂ·İ1-12  
-        rt_kprintf("ÔÂ·İ²»ºÏ·¨!ÇëÊäÈë1-12Ö®¼äµÄÔÂ·İ\n");  
+    if(month < 1 || month > 12) {            // æœˆä»½1-12  
+        rt_kprintf("æœˆä»½ä¸åˆæ³•!è¯·è¾“å…¥1-12ä¹‹é—´çš„æœˆä»½\n");  
         return 1; 
     }  
-    if(day < 1 || day > 31) {                // ÈÕÆÚ1-31£¨¼ò»¯Ğ£Ñé£¬¿É¸ù¾İÔÂ·İÏ¸»¯£©  
-        rt_kprintf("ÈÕÆÚ²»ºÏ·¨!ÇëÊäÈë1-31Ö®¼äµÄÈÕÆÚ\n");  
+    if(day < 1 || day > 31) {                // æ—¥æœŸ1-31ï¼ˆç®€åŒ–æ ¡éªŒï¼Œå¯æ ¹æ®æœˆä»½ç»†åŒ–ï¼‰  
+        rt_kprintf("æ—¥æœŸä¸åˆæ³•!è¯·è¾“å…¥1-31ä¹‹é—´çš„æ—¥æœŸ\n");  
         return 1; 
     }  
-    if((int16_t)hour < 0 || hour > 23) {              // Ğ¡Ê±0-23  
-        rt_kprintf("Ğ¡Ê±²»ºÏ·¨!ÇëÊäÈë0-23Ö®¼äµÄĞ¡Ê±\n");  
+    if((int16_t)hour < 0 || hour > 23) {              // å°æ—¶0-23  
+        rt_kprintf("å°æ—¶ä¸åˆæ³•!è¯·è¾“å…¥0-23ä¹‹é—´çš„å°æ—¶\n");  
         return 1; 
     }  
-    if((int16_t)min < 0 || min > 59) {                // ·ÖÖÓ0-59  
-        rt_kprintf("·ÖÖÓ²»ºÏ·¨!ÇëÊäÈë0-59Ö®¼äµÄ·ÖÖÓ\n");  
+    if((int16_t)min < 0 || min > 59) {                // åˆ†é’Ÿ0-59  
+        rt_kprintf("åˆ†é’Ÿä¸åˆæ³•!è¯·è¾“å…¥0-59ä¹‹é—´çš„åˆ†é’Ÿ\n");  
         return 1; 
     }  
-    if((int16_t)sec < 0 || sec > 59) {                // ÃëÖÓ0-59  
-        rt_kprintf("ÃëÖÓ²»ºÏ·¨!ÇëÊäÈë0-59Ö®¼äµÄÃëÖÓ\n");  
+    if((int16_t)sec < 0 || sec > 59) {                // ç§’é’Ÿ0-59  
+        rt_kprintf("ç§’é’Ÿä¸åˆæ³•!è¯·è¾“å…¥0-59ä¹‹é—´çš„ç§’é’Ÿ\n");  
         return 1; 
     } 
     return 0;
 } 
 
 /* 
- * shellÃüÁî£ºÉèÖÃÊ±¼ä£¨²ÎÊıÎª Äê ÔÂ ÈÕ Ê± ·Ö Ãë£© 
- * Ê¾Àı£ºrtc_set_cmd 2025 11 19 14 35 00 
+ * shellå‘½ä»¤ï¼šè®¾ç½®æ—¶é—´ï¼ˆå‚æ•°ä¸º å¹´ æœˆ æ—¥ æ—¶ åˆ† ç§’ï¼‰ 
+ * ç¤ºä¾‹ï¼šrtc_set_cmd 2025 11 19 14 35 00 
  */  
 static void rtc_set_cmd(int argc, char **argv) {  
     struct tm time;  
@@ -558,12 +558,12 @@ static void rtc_set_cmd(int argc, char **argv) {
     }  
 
     if(argc != 7) {
-        rt_kprintf("useage : rtc_set <Äê> <ÔÂ> <ÈÕ> <Ê±> <·Ö> <Ãë>\n");
+        rt_kprintf("useage : rtc_set <å¹´> <æœˆ> <æ—¥> <æ—¶> <åˆ†> <ç§’>\n");
         rt_kprintf("example: rtc_set 2024 10 25 09 30 00\n");
         return;
     }
 
-    // ½âÎöÃüÁîĞĞ²ÎÊı
+    // è§£æå‘½ä»¤è¡Œå‚æ•°
     year = atoi(argv[1]);
     month = atoi(argv[2]);
     day = atoi(argv[3]);
@@ -573,23 +573,23 @@ static void rtc_set_cmd(int argc, char **argv) {
     if(param_check(year,month,day,hour,min,sec,weekday) != 0){
         return;
     }
-    // ¹Ø¼ü£º¼ÆËãĞÇÆÚ£¨0=ÖÜÈÕ£¬1=ÖÜÒ»£¬...£¬6=ÖÜÁù£©  
+    // å…³é”®ï¼šè®¡ç®—æ˜ŸæœŸï¼ˆ0=å‘¨æ—¥ï¼Œ1=å‘¨ä¸€ï¼Œ...ï¼Œ6=å‘¨å…­ï¼‰  
     weekday = calculate_weekday(year, month, day);  
-    // ×ª»»Îªstruct tm½á¹¹ÌåµÄ¸ñÊ½  
-    time.tm_year = year - 1900;  // struct tmµÄÄê·İÊÇ1900ÄêÒÔÀ´µÄÆ«ÒÆ£¨2024-1900=124£©  
-    time.tm_mon  = month - 1;    // struct tmµÄÔÂ·İÊÇ0-11£¨10ÔÂ¶ÔÓ¦9£©  
+    // è½¬æ¢ä¸ºstruct tmç»“æ„ä½“çš„æ ¼å¼  
+    time.tm_year = year - 1900;  // struct tmçš„å¹´ä»½æ˜¯1900å¹´ä»¥æ¥çš„åç§»ï¼ˆ2024-1900=124ï¼‰  
+    time.tm_mon  = month - 1;    // struct tmçš„æœˆä»½æ˜¯0-11ï¼ˆ10æœˆå¯¹åº”9ï¼‰  
     time.tm_mday = day;  
     time.tm_hour = hour;  
     time.tm_min  = min;  
     time.tm_sec  = sec;  
-    time.tm_wday = weekday;      // ĞÇÆÚ¼ÆËã  
-    // µ÷ÓÃÉèÖÃÊ±¼äº¯Êı  
+    time.tm_wday = weekday;      // æ˜ŸæœŸè®¡ç®—  
+    // è°ƒç”¨è®¾ç½®æ—¶é—´å‡½æ•°  
     ret = ins5t8025_set_time(&time);  
     if(ret == RT_EOK) {  
-        rt_kprintf("AÊ±¼äÉèÖÃ³É¹¦: %s", asctime(&time));  // asctime×Ô¶¯¸ñÊ½»¯Ê±¼ä×Ö·û´®  
-        rt_kprintf("BÊ±¼äÉèÖÃ³É¹¦: %04d-%02d-%02d %02d:%02d:%02d\n", year, month, day, hour, min, sec);  
+        rt_kprintf("Aæ—¶é—´è®¾ç½®æˆåŠŸ: %s", asctime(&time));  // asctimeè‡ªåŠ¨æ ¼å¼åŒ–æ—¶é—´å­—ç¬¦ä¸²  
+        rt_kprintf("Bæ—¶é—´è®¾ç½®æˆåŠŸ: %04d-%02d-%02d %02d:%02d:%02d\n", year, month, day, hour, min, sec);  
     } else {  
-        rt_kprintf("Ê±¼äÉèÖÃÊ§°Ü!´íÎóÂë: %d\n", ret);  
+        rt_kprintf("æ—¶é—´è®¾ç½®å¤±è´¥!é”™è¯¯ç : %d\n", ret);  
     }  
 }  
 MSH_CMD_EXPORT(rtc_set_cmd, rtc_set_cmd);
@@ -600,32 +600,32 @@ MSH_CMD_EXPORT(rtc_set_cmd, rtc_set_cmd);
 
 
 /*
- * shellÃüÁî£º¶ÁÈ¡²¢´òÓ¡µ±Ç°Ê±¼ä
- * Ê¾Àı£ºrtc_get_cmd
+ * shellå‘½ä»¤ï¼šè¯»å–å¹¶æ‰“å°å½“å‰æ—¶é—´
+ * ç¤ºä¾‹ï¼šrtc_get_cmd
  */
 static void rtc_get_cmd(int argc, char **argv) {
     struct tm time;
     rt_err_t ret;
 
     if(!ins5t8025_inited) {
-        rt_kprintf("ÇëÏÈÖ´ĞĞ rtc_init ³õÊ¼»¯Éè±¸!\n"); 
+        rt_kprintf("è¯·å…ˆæ‰§è¡Œ rtc_init åˆå§‹åŒ–è®¾å¤‡!\n"); 
         return;
     }
 
     ret = ins5t8025_get_time(&time);
     if(ret == RT_EOK) {
-        // ¸ñÊ½»¯Êä³öÊ±¼ä£¨struct tmµÄÄê·İĞèÒª+1900£¬ÔÂ·İ+1£©
+        // æ ¼å¼åŒ–è¾“å‡ºæ—¶é—´ï¼ˆstruct tmçš„å¹´ä»½éœ€è¦+1900ï¼Œæœˆä»½+1ï¼‰
         int weekday = (time.tm_wday == 0) ? 7 : time.tm_wday;
-        rt_kprintf("µ±Ç°Ê±¼ä: %04d-%02d-%02d %02d:%02d:%02d ĞÇÆÚ%d\n",
-                   time.tm_year + 1900,   // ×ª»»ÎªÊµ¼ÊÄê·İ
-                   time.tm_mon + 1,       // ×ª»»Îª1-12ÔÂ
+        rt_kprintf("å½“å‰æ—¶é—´: %04d-%02d-%02d %02d:%02d:%02d æ˜ŸæœŸ%d\n",
+                   time.tm_year + 1900,   // è½¬æ¢ä¸ºå®é™…å¹´ä»½
+                   time.tm_mon + 1,       // è½¬æ¢ä¸º1-12æœˆ
                    time.tm_mday,
                    time.tm_hour,
                    time.tm_min,
                    time.tm_sec,
-                   weekday);  // ÕıÈ·ÏÔÊ¾ĞÇÆÚ
+                   weekday);  // æ­£ç¡®æ˜¾ç¤ºæ˜ŸæœŸ
     } else {
-        rt_kprintf("Ê±¼ä¶ÁÈ¡Ê§°Ü!´íÎóÂë: %d\n", ret);  
+        rt_kprintf("æ—¶é—´è¯»å–å¤±è´¥!é”™è¯¯ç : %d\n", ret);  
     }
 }
 MSH_CMD_EXPORT(rtc_get_cmd, rtc_get_cmd);
@@ -660,14 +660,14 @@ MSH_CMD_EXPORT(rtc_get_cmd, rtc_get_cmd);
 
 
 /********************************************************************/
-/*                       RT-Thread Éè±¸¿ò¼Ü¶ş´Î·â×°                  */
+/*                       RT-Thread è®¾å¤‡æ¡†æ¶äºŒæ¬¡å°è£…                  */
 /********************************************************************/
 typedef struct {
-    struct rt_device          parent;      /* ¼Ì³Ğ rt_device */
-    rt_mutex_t                lock;        /* ±£»¤ I2C ²Ù×÷ */
+    struct rt_device          parent;      /* ç»§æ‰¿ rt_device */
+    rt_mutex_t                lock;        /* ä¿æŠ¤ I2C æ“ä½œ */
 } ins5t8025_dev_t;
 
-static ins5t8025_dev_t  ins5t8025_dev;   /* Î¨Ò»ÊµÀı */
+static ins5t8025_dev_t  ins5t8025_dev;   /* å”¯ä¸€å®ä¾‹ */
 
 
 
@@ -678,7 +678,6 @@ static rt_err_t _ins5t8025_rtc_get_time(struct tm *tm) {
 static rt_err_t _ins5t8025_rtc_set_time(struct tm *tm) {
     return ins5t8025_set_time(tm);
 }
-
 
 static rt_err_t ins5t8025_dev_open(rt_device_t dev, rt_uint16_t oflag) {
     return ins5t8025_init(INS5T8025_I2C_BUS);
@@ -723,17 +722,15 @@ static rt_err_t ins5t8025_dev_control(rt_device_t dev,
 }
 
 #ifdef RT_USING_DEVICE_OPS
-// ÏÈ¶¨ÒåÈ«¾ÖµÄÉè±¸²Ù×÷½á¹¹Ìå£¨ÊÊÅä¾É°æ±¾£©
 static const struct rt_device_ops ops =
 {
-    RT_NULL,               // init º¯Êı
-    ins5t8025_dev_open,    // open º¯Êı
-    ins5t8025_dev_close,   // close º¯Êı
-    ins5t8025_dev_read,    // read º¯Êı
-    ins5t8025_dev_write,   // write º¯Êı
-    ins5t8025_dev_control  // control º¯Êı
+    RT_NULL,               // init å‡½æ•°
+    ins5t8025_dev_open,    // open å‡½æ•°
+    ins5t8025_dev_close,   // close å‡½æ•°
+    ins5t8025_dev_read,    // read å‡½æ•°
+    ins5t8025_dev_write,   // write å‡½æ•°
+    ins5t8025_dev_control  // control å‡½æ•°
 };
-
 #endif
 
 
@@ -746,10 +743,9 @@ static int ins5t8025_dev_register(void) {
 
     d->parent.type    = RT_Device_Class_RTC;
     
-#ifdef RT_DEVICE_USING_OPS  // ¾É°æ±¾£¨ÓĞrt_device_opsµÄÇé¿ö£©
+#ifdef RT_USING_DEVICE_OPS  // æ—§ç‰ˆæœ¬ï¼ˆæœ‰rt_device_opsçš„æƒ…å†µï¼‰
     d->parent.ops = &ops; 
-#else                       // ĞÂ°æ±¾£¨ÎŞops£¬Ö±½Ó¸³Öµº¯Êı£©
-   
+#else                       // æ–°ç‰ˆæœ¬ï¼ˆæ— opsï¼Œç›´æ¥èµ‹å€¼å‡½æ•°ï¼‰
     d->parent.init    = RT_NULL;
     d->parent.open    = ins5t8025_dev_open;
     d->parent.close   = ins5t8025_dev_close;
@@ -770,21 +766,21 @@ static void rtc_user_demo_entry(void *param) {
     rt_err_t    ret;
     int         i;
 
-    /* 1. ²éÕÒÉè±¸ ÒòÎªÌáÇ°ÓĞins5t8025_dev_register*/
+    /* 1. æŸ¥æ‰¾è®¾å¤‡ å› ä¸ºæå‰æœ‰ins5t8025_dev_register*/
     rtc = rt_device_find("INS5T8025");
     if (rtc == RT_NULL) {
         rt_kprintf("[RTC_TEST] device 'rtc' not found!\n");
         return;
     }
 
-    /* 2. ´ò¿ªÉè±¸£¨·Ç±ØĞë£¬control ½Ó¿Ú¿ÉÖ±½ÓÓÃ£© */
+    /* 2. æ‰“å¼€è®¾å¤‡ï¼ˆéå¿…é¡»ï¼Œcontrol æ¥å£å¯ç›´æ¥ç”¨ï¼‰ */
     ret = rt_device_open(rtc, RT_DEVICE_OFLAG_RDWR);
     if (ret != RT_EOK) {
         rt_kprintf("[RTC_TEST] open rtc fail, %d\n", ret);
         return;
     }
 
-    /* 3. Á¬Ğø¶Á 5 ´Î£¬¿´³õÊ¼Öµ */
+    /* 3. è¿ç»­è¯» 5 æ¬¡ï¼Œçœ‹åˆå§‹å€¼ */
     rt_kprintf("[RTC_TEST] -------- read 5 times --------\n");
     for (i = 0; i < 5; i++) {
         ret = rt_device_control(rtc, DEVICE_CTRL_RTC_GET_TIME, &tm);
@@ -795,19 +791,19 @@ static void rtc_user_demo_entry(void *param) {
         rt_thread_mdelay(1000);
     }
 #if 0
-    /* 4. ¹¹ÔìÒ»¸öÄ¿±êÊ±¼ä 2025-06-25 18:30:45 */
+    /* 4. æ„é€ ä¸€ä¸ªç›®æ ‡æ—¶é—´ 2025-06-25 18:30:45 */
     tm.tm_year = 2025 - 1900;
     tm.tm_mon  = 6  - 1;
     tm.tm_mday = 25;
     tm.tm_hour = 18;
     tm.tm_min  = 30;
     tm.tm_sec  = 45;
-    tm.tm_wday = 3;          /* 2025-06-25 È·ÊµÊÇĞÇÆÚÈı */
+    tm.tm_wday = 3;          /* 2025-06-25 ç¡®å®æ˜¯æ˜ŸæœŸä¸‰ */
     rt_kprintf("[RTC_TEST] -------- write target: %s", asctime(&tm));
     ret = rt_device_control(rtc, DEVICE_CTRL_RTC_SET_TIME, &tm);
     rt_kprintf("[RTC_TEST] write ret = %d\n", ret);
 
-    /* 5. ÔÙ¶Á 3 ´Î£¬È·ÈÏĞ´Èë³É¹¦ */
+    /* 5. å†è¯» 3 æ¬¡ï¼Œç¡®è®¤å†™å…¥æˆåŠŸ */
     rt_kprintf("[RTC_TEST] -------- read 3 times after write --------\n");
     for (i = 0; i < 3; i++) {
         ret = rt_device_control(rtc, DEVICE_CTRL_RTC_GET_TIME, &tm);
@@ -818,7 +814,7 @@ static void rtc_user_demo_entry(void *param) {
         rt_thread_mdelay(1000);
     }
 
-    /* 6. ¹ØÉè±¸£¨·Ç±ØĞë£© */
+    /* 6. å…³è®¾å¤‡ï¼ˆéå¿…é¡»ï¼‰ */
     rt_device_close(rtc);
 #endif    
     rt_kprintf("[RTC_TEST] -------- test finish --------\n");
