@@ -238,4 +238,6 @@ void rtc_alarm_task_entry(void *param) {
 
 ## 联系方式
 
-若遇到问题或有优化建议，欢迎在 Gitee 仓库提交 Issue 或 Pull Request，共同完善驱动！
+维护：龚金华
+单位: 上海威派格智慧水务股份有限公司
+邮箱：782730309@qq.com
